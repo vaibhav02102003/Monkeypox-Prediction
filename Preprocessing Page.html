@@ -1,0 +1,42 @@
+<div id="about" class="about" style="height: 100vh;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about_border">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="titlepage text_align_left">
+                               <center> <h2>Preprocessing and split data</h2></center>
+                            </div>
+                            <div class="about_text">
+                             
+                             
+                                <form action="{% url 'preprocessing' %}" method="post" enctype="multipart/form-data"><br><br>
+                                   {% csrf_token %}
+                                   <label><h6 style="color:rgb(255, 255, 255);font-size:35px;"><b>Enter Split Size:</b></h6></label>&nbsp&nbsp&nbsp&nbsp
+                                   <input type="text" placeholder="Test Data Size" name="split" required="required" style="width: 350px;"><br><br><br><br>
+
+                                   
+                          
+                                          <input type="submit" value="submit" class="btn btn-info"><br><br><br>
+                                          <div>
+                                            {% for message in messages %}
+                                           <center><h4>{{message}}</h4></center>
+                                            {% endfor %}
+                                      </div>
+                                </form>
+                                  </center>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about_img">
+                                <figure><img class="img_responsive" src="C:\Users\venka\Desktop\FINAL PROJECT\images" alt="#" /></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,36 @@
+<div id="about" class="about" style="height: 100vh;">
+        <div class="container">
+           
+                <div class="col-md-12">
+                    <div class="about_border">
+                      
+                            <div class="col-md-12">
+                                <div class="titlepage text_align_center">
+                                   <h2>Prediction</h2>
+                                </div>
+                                <br><br><br><br>
+                            </div>
+                            <div class="col-md-12">
+                                <form action="{% url 'prediction' %}" method="post">
+                                    {% csrf_token %}
+                                    <center><h2 style="margin-left: 20px;">{{msg|safe}}</h2></center><br><br>
+                                    <center><input type="text" name="COVID_Symptoms" placeholder="Enter The COVID_Symptoms"style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="COVID_Tests" placeholder="Enter The COVID_Tests"style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name=" COVID_Vaccination" placeholder="Enter The  COVID_Vaccination"style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Age " placeholder="Enter The Age "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Contact_with_Monkeypox " placeholder="Enter The Contact_with_Monkeypox "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);"><br>
+                                        <input type="text" name="Travel_History " placeholder="Enter The Travel_History "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Healthcare_Worker " placeholder="Enter The Healthcare_Worker "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Body_Temperature " placeholder="Enter The Body_Temperature "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Hand_Hygiene " placeholder="Enter The Hand_Hygiene "style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                        <input type="text" name="Mask_Usage" placeholder="Enter The Mask_Usage"style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);"><br>
+                                        <input type="text" name="Close_Contact" placeholder="Enter The Close_Contact"style="height: 30px;width: 100px; color:rgb(11, 203, 236); border-color:rgb(11, 203, 236);">
+                                    <center><input type="submit" style="margin-left: 50px;"><br></center></form>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+

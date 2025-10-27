@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload & View Monkeypox Images</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .upload-box, .image-box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: lightgreen;
+            color: black;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: green;
+            color: white;
+        }
+        .uploaded-images img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="upload-box">
+                <h2>Upload Monkeypox Image</h2>
+
+                <p id="message" style="color: lightgreen; display: none;">Image uploaded successfully!</p>
+                
+                <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
+                    <label>Select an Image:</label><br>
+                    <input type="file" id="imageInput" name="image" accept="image/*" required 
+                           style="width: 100%; padding: 8px; margin: 10px 0; border-radius: 5px; background-color: white; color: black;"><br>
+
+                    <button type="submit" class="btn btn-custom">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="image-box">
+                <h2>Uploaded Images</h2>
+                <div class="uploaded-images" id="imageContainer">
+                    <p>No images uploaded yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a href="INDEX.html" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        let imageInput = document.getElementById('imageInput');
+        if (imageInput.files.length > 0) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                imgElement.alt = "Uploaded Image";
+                document.getElementById('imageContainer').innerHTML = "";
+                document.getElementById('imageContainer').appendChild(imgElement);
+                document.getElementById('message').style.display = 'block';
+            };
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+    });
+</script>
+
+</body>
+</html>

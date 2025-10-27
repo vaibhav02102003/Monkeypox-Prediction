@@ -1,0 +1,49 @@
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                   <center> <h2>Model Training</h2></center>
+                                </div><br><br><br>
+                                <div class="about_text">
+                                 
+                                    <form action="{% url 'model' %}" method="post">
+                                        
+                                        <center> <label for="algo" style="color:white;">Select a Model:</label>
+                                          <select id="algo" name="algo">
+                                            <option value="5">SELECT A ALGORITHM</option>
+                                            <option value="0">LinearDiscriminantAnalysis</option>
+                                            <option value="1">AdaBoostClassifier</option>
+                                            <option value="2">MLPClassifier</option>
+                                  
+                                          </select>
+                                          <br><br><br>
+                                          <input type="submit"><br><br><br>
+
+                                          <center><h6 style="color: white;">{{msg}}</h6></center><br><br>
+                                          <center><h6 style="color: white;">{{msg1}}</h6></center><br><br>
+                                          <center><h6 style="color: white;">{{msg2}}</h6></center><br><br>
+                                          <center><h6 style="color: white;">{{msg3}}</h6></center><br><br>
+
+                                        </center>
+                                        <!-- <div>
+                                            {% for message in messages %}
+                                           <center><h4>{{message}}</h4></center>
+                                            {% endfor %}
+                                      </div> -->
+                                      </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="C:\Users\venka\Desktop\FINAL PROJECT\images" alt="" /></figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div
